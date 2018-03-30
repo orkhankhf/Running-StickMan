@@ -1,0 +1,1 @@
+Create running stick man with only css.

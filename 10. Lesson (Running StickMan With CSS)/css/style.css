@@ -1,0 +1,165 @@
+/* common styles */
+body{
+	margin:0;
+}
+.inline-block{
+	display: inline-block;
+}
+.bg-black{
+	background-color: black;
+}
+.position-absolute{
+	position: absolute;
+}
+
+
+
+/* native styles */
+/* animations */
+@keyframes jumpingEffect{
+	0% {
+	    margin-top: -50px;
+	    padding-bottom: 50px;
+	}
+	50% {
+	    margin-top: 0;
+	    padding-bottom: 0;
+	}
+	100% {
+	    margin-top: -50px;
+	    padding-bottom: 50px;
+	}
+}
+@keyframes arm{
+	0%{
+		transform: rotate(-45deg);
+	}
+	50%{
+		transform: rotate(45deg);
+	}
+	100%{
+		transform: rotate(-45deg);
+	}
+}
+@keyframes carpusArm{
+	0%{
+		transform: rotate(-15deg);
+	}
+	50%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(-15deg);
+	}
+}
+@keyframes leg{
+	0%{
+		transform: rotate(-90deg);
+	}
+	50%{
+		transform: rotate(45deg);
+	}
+	100%{
+		transform: rotate(-90deg);
+	}
+}
+@keyframes knee{
+	0%{
+		transform: rotate(112deg);
+	}
+	30%{
+		transform: rotate(0deg);
+	}
+	60%{
+		transform: rotate(45deg);
+	}
+	100%{
+		transform: rotate(112deg);
+	}
+}
+.wrapper{
+	width: 500px;
+	margin: 100px auto;
+	text-align: center;
+}
+.animation-main{
+	position: relative;
+	animation: 0.5s jumpingEffect infinite ease-in;
+}
+.stick-head{
+	width: 80px;
+	height: 80px;
+	border-radius:50%;
+}
+.black-floor{
+	border-top: 5px solid black;
+	width: 300px;
+	position: relative;
+	margin-top: 132px;
+}
+/* stick head started */
+.stick-head div:first-child{
+    right: 20px;
+    top: 23px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+}
+.stick-head div:last-child{
+    top: 58px;
+    right: 4px;
+    transform: rotate(20deg);
+    width: 20px;
+    height: 6px;
+    background-color: white;
+}
+/* stick head ended */
+
+/* stick body started */
+.stick-body{
+	border-left: 10px solid black;
+    height: 100px;
+    position: relative;
+    left: 35px;
+}
+.arm{
+	width: 10px;
+    height: 70px;
+    left: -9px;
+    transform-origin: top;
+    transform: rotate(-45deg);
+    animation: 1s arm infinite;
+}
+.arm div{
+	width: 50px;
+    height: 10px;
+    bottom: 0;
+    left: 9px;
+    animation: carpusArm 1s infinite;
+    transform-origin:left;
+    transform:rotate(-15deg);
+}
+.leg{
+    width: 10px;
+    height: 70px;
+    bottom: -70px;
+    left: -10px;
+    transform: rotate(-90deg);
+    transform-origin: top;
+    animation: leg 1s infinite;
+}
+.leg div{
+	width: 10px;
+    height: 70px;
+    background: red;
+    right: 0;
+    transform: rotate(112deg);
+    transform-origin: top;
+    bottom: -70px;
+    animation: knee 1s infinite;
+}
+.delay{
+	animation-delay: 0.5s !important;
+}
+/* stick body ended */
